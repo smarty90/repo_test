@@ -61,7 +61,7 @@ def send_email_1(action=None, success=None, container=None, results=None, handle
     ## Custom Code End
     ################################################################################
 
-    phantom.act("send email", parameters=parameters, name="send_email_1", assets=["smtp"])
+    phantom.act("send email", parameters=parameters, name="send_email_1", assets=["smtp_naver"])
 
     return
 

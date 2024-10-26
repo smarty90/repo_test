@@ -28,7 +28,7 @@
                     "targetPort": "3_in"
                 }
             ],
-            "hash": "4e132a8ab8ad5c5eeb6d42fb006214a431bb4d9b",
+            "hash": "98a1c073098db3034b53f6c5f69d1345d9aa9787",
             "nodes": {
                 "0": {
                     "data": {
@@ -44,7 +44,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 40,
-                    "y": -140.00000000000006
+                    "y": -140.0000000000001
                 },
                 "1": {
                     "data": {
@@ -60,7 +60,7 @@
                     "type": "end",
                     "warnings": {},
                     "x": 40,
-                    "y": 159.99999999999997
+                    "y": 159.99999999999994
                 },
                 "2": {
                     "data": {
@@ -71,7 +71,7 @@
                         },
                         "connector": "SMTP",
                         "connectorConfigs": [
-                            "smtp"
+                            "smtp_naver"
                         ],
                         "connectorId": "45bb6f37-4478-499b-b4a3-51ecfa62b78c",
                         "connectorVersion": "v1",
@@ -123,7 +123,7 @@
                     "type": "action",
                     "warnings": {},
                     "x": 20,
-                    "y": 59.99999999999996
+                    "y": 59.999999999999915
                 },
                 "3": {
                     "data": {
@@ -194,7 +194,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 20,
-                    "y": -20.00000000000004
+                    "y": -20.000000000000078
                 }
             },
             "notes": ""
@@ -207,7 +207,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T11:07:57.260001+00:00",
+    "create_time": "2024-10-26T11:41:09.899893+00:00",
     "draft_mode": false,
     "labels": [
         "risk"
