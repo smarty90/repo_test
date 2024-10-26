@@ -7,37 +7,6 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_2_to_port_3",
-                    "sourceNode": "2",
-                    "sourcePort": "2_out",
-                    "targetNode": "3",
-                    "targetPort": "3_in"
-                },
-                {
-                    "conditions": [
-                        {
-                            "index": 0
-                        }
-                    ],
-                    "id": "port_3_to_port_6",
-                    "sourceNode": "3",
-                    "sourcePort": "3_out",
-                    "targetNode": "6",
-                    "targetPort": "6_in"
-                },
-                {
-                    "conditions": [
-                        {
-                            "index": 1
-                        }
-                    ],
-                    "id": "port_3_to_port_7",
-                    "sourceNode": "3",
-                    "sourcePort": "3_out",
-                    "targetNode": "7",
-                    "targetPort": "7_in"
-                },
-                {
                     "id": "port_6_to_port_8",
                     "sourceNode": "6",
                     "sourcePort": "6_out",
@@ -113,9 +82,40 @@
                     "sourcePort": "17_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
+                },
+                {
+                    "id": "port_2_to_port_19",
+                    "sourceNode": "2",
+                    "sourcePort": "2_out",
+                    "targetNode": "19",
+                    "targetPort": "19_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 0
+                        }
+                    ],
+                    "id": "port_19_to_port_6",
+                    "sourceNode": "19",
+                    "sourcePort": "19_out",
+                    "targetNode": "6",
+                    "targetPort": "6_in"
+                },
+                {
+                    "conditions": [
+                        {
+                            "index": 1
+                        }
+                    ],
+                    "id": "port_19_to_port_7",
+                    "sourceNode": "19",
+                    "sourcePort": "19_out",
+                    "targetNode": "7",
+                    "targetPort": "7_in"
                 }
             ],
-            "hash": "541f125b14ec9e02bf1290f20a566d166fadbb39",
+            "hash": "286f09b8af16f77f692cb302a87cd3bf00de69d6",
             "nodes": {
                 "0": {
                     "data": {
@@ -261,7 +261,7 @@
                     "id": "11",
                     "type": "action",
                     "warnings": {},
-                    "x": 180,
+                    "x": 170,
                     "y": 1060
                 },
                 "12": {
@@ -657,6 +657,49 @@
                     "x": 1000,
                     "y": 1000
                 },
+                "19": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "conditions": [
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 0,
+                                        "op": "==",
+                                        "param": "custom_list:\ub0b4\uc7a5\ud615 \ub370\uc774\ud130 \uc800\uc7a5 ",
+                                        "value": "artifact:*.cef.destinationAddress"
+                                    }
+                                ],
+                                "conditionIndex": 0,
+                                "logic": "and"
+                            },
+                            {
+                                "comparisons": [
+                                    {
+                                        "conditionIndex": 1,
+                                        "op": "!=",
+                                        "param": "custom_list:\ub0b4\uc7a5\ud615 \ub370\uc774\ud130 \uc800\uc7a5 ",
+                                        "value": "artifact:*.cef.destinationAddress"
+                                    }
+                                ],
+                                "conditionIndex": 1,
+                                "logic": "and"
+                            }
+                        ],
+                        "functionId": 2,
+                        "functionName": "filter_2",
+                        "id": "19",
+                        "type": "filter"
+                    },
+                    "errors": {},
+                    "id": "19",
+                    "type": "filter",
+                    "warnings": {},
+                    "x": 400,
+                    "y": 447
+                },
                 "2": {
                     "data": {
                         "action": "run query",
@@ -712,49 +755,6 @@
                     "warnings": {},
                     "x": 340,
                     "y": 298
-                },
-                "3": {
-                    "data": {
-                        "advanced": {
-                            "join": []
-                        },
-                        "conditions": [
-                            {
-                                "comparisons": [
-                                    {
-                                        "conditionIndex": 0,
-                                        "op": "!=",
-                                        "param": "severity",
-                                        "value": "High"
-                                    }
-                                ],
-                                "conditionIndex": 0,
-                                "logic": "and"
-                            },
-                            {
-                                "comparisons": [
-                                    {
-                                        "conditionIndex": 1,
-                                        "op": "==",
-                                        "param": "severity",
-                                        "value": "High"
-                                    }
-                                ],
-                                "conditionIndex": 1,
-                                "logic": "and"
-                            }
-                        ],
-                        "functionId": 1,
-                        "functionName": "filter_1",
-                        "id": "3",
-                        "type": "filter"
-                    },
-                    "errors": {},
-                    "id": "3",
-                    "type": "filter",
-                    "warnings": {},
-                    "x": 400,
-                    "y": 447
                 },
                 "6": {
                     "data": {
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T11:13:11.127927+00:00",
+    "create_time": "2024-10-26T11:21:47.287697+00:00",
     "draft_mode": false,
     "labels": [
         "risk"

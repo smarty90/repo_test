@@ -41,40 +41,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["splunk_notable"], callback=filter_1)
-
-    return
-
-
-@phantom.playbook_block()
-def filter_1(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
-    phantom.debug("filter_1() called")
-
-    # collect filtered artifact ids and results for 'if' condition 1
-    matched_artifacts_1, matched_results_1 = phantom.condition(
-        container=container,
-        conditions=[
-            ["severity", "!=", "High"]
-        ],
-        name="filter_1:condition_1",
-        delimiter=None)
-
-    # call connected blocks if filtered artifacts or results
-    if matched_artifacts_1 or matched_results_1:
-        add_note_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
-
-    # collect filtered artifact ids and results for 'if' condition 2
-    matched_artifacts_2, matched_results_2 = phantom.condition(
-        container=container,
-        conditions=[
-            ["severity", "==", "High"]
-        ],
-        name="filter_1:condition_2",
-        delimiter=None)
-
-    # call connected blocks if filtered artifacts or results
-    if matched_artifacts_2 or matched_results_2:
-        add_comment_2(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_2, filtered_results=matched_results_2)
+    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["splunk_notable"], callback=filter_2)
 
     return
 
@@ -374,6 +341,39 @@ def send_email_1(action=None, success=None, container=None, results=None, handle
     ################################################################################
 
     phantom.act("send email", parameters=parameters, name="send_email_1", assets=["smtp"])
+
+    return
+
+
+@phantom.playbook_block()
+def filter_2(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
+    phantom.debug("filter_2() called")
+
+    # collect filtered artifact ids and results for 'if' condition 1
+    matched_artifacts_1, matched_results_1 = phantom.condition(
+        container=container,
+        conditions=[
+            ["custom_list:내장형 데이터 저장 ", "==", "artifact:*.cef.destinationAddress"]
+        ],
+        name="filter_2:condition_1",
+        delimiter=None)
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_1 or matched_results_1:
+        add_note_1(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_1, filtered_results=matched_results_1)
+
+    # collect filtered artifact ids and results for 'if' condition 2
+    matched_artifacts_2, matched_results_2 = phantom.condition(
+        container=container,
+        conditions=[
+            ["custom_list:내장형 데이터 저장 ", "!=", "artifact:*.cef.destinationAddress"]
+        ],
+        name="filter_2:condition_2",
+        delimiter=None)
+
+    # call connected blocks if filtered artifacts or results
+    if matched_artifacts_2 or matched_results_2:
+        add_comment_2(action=action, success=success, container=container, results=results, handle=handle, filtered_artifacts=matched_artifacts_2, filtered_results=matched_results_2)
 
     return
 
