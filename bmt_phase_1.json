@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "9092f479e1e5c2b10e913ebea9ef3ddeb97e8b29",
+            "hash": "93b60b4efc10067ded3a34f41d725b0c995b6990",
             "nodes": {
                 "0": {
                     "data": {
@@ -727,7 +727,7 @@
                         },
                         "parameters": {
                             "command": "search",
-                            "query": "earliest=-100m `notable` | search rule_name=SIEM_RULE_01* AND eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *",
+                            "query": "earliest=-100m `notable` | search rule_name=SIEM_RULE_01*",
                             "search_mode": "smart"
                         },
                         "requiredParameters": [
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T11:54:56.336761+00:00",
+    "create_time": "2024-10-26T11:56:57.768862+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
