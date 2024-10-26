@@ -41,7 +41,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["notable"], callback=filter_1)
+    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["splunk_notable"], callback=filter_1)
 
     return
 
@@ -212,7 +212,7 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
     ## Custom Code End
     ################################################################################
 
-    phantom.act("ip reputation", parameters=parameters, name="ip_reputation_1", assets=["virus_total"], callback=ip_reputation_1_callback)
+    phantom.act("ip reputation", parameters=parameters, name="ip_reputation_1", assets=["virustotal v3"], callback=ip_reputation_1_callback)
 
     return
 
@@ -257,7 +257,7 @@ def whois_ip_1(action=None, success=None, container=None, results=None, handle=N
     ## Custom Code End
     ################################################################################
 
-    phantom.act("whois ip", parameters=parameters, name="whois_ip_1", assets=["ip_check"], callback=add_note_6)
+    phantom.act("whois ip", parameters=parameters, name="whois_ip_1", assets=["whois"], callback=add_note_6)
 
     return
 
