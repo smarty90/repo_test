@@ -7,35 +7,35 @@
             "description": "",
             "edges": [
                 {
-                    "id": "port_0_to_port_10",
+                    "id": "port_0_to_port_13",
                     "sourceNode": "0",
                     "sourcePort": "0_out",
-                    "targetNode": "10",
-                    "targetPort": "10_in"
+                    "targetNode": "13",
+                    "targetPort": "13_in"
                 },
                 {
-                    "id": "port_10_to_port_11",
-                    "sourceNode": "10",
-                    "sourcePort": "10_out",
-                    "targetNode": "11",
-                    "targetPort": "11_in"
+                    "id": "port_13_to_port_14",
+                    "sourceNode": "13",
+                    "sourcePort": "13_out",
+                    "targetNode": "14",
+                    "targetPort": "14_in"
                 },
                 {
-                    "id": "port_11_to_port_12",
-                    "sourceNode": "11",
-                    "sourcePort": "11_out",
-                    "targetNode": "12",
-                    "targetPort": "12_in"
-                },
-                {
-                    "id": "port_12_to_port_1",
-                    "sourceNode": "12",
-                    "sourcePort": "12_out",
+                    "id": "port_15_to_port_1",
+                    "sourceNode": "15",
+                    "sourcePort": "15_out",
                     "targetNode": "1",
                     "targetPort": "1_in"
+                },
+                {
+                    "id": "port_14_to_port_15",
+                    "sourceNode": "14",
+                    "sourcePort": "14_out",
+                    "targetNode": "15",
+                    "targetPort": "15_in"
                 }
             ],
-            "hash": "db0a0fd351429b9ab27dd258a30212911a5913dc",
+            "hash": "21d56c921a497d68e0024d7dfce5df7870a56607",
             "nodes": {
                 "0": {
                     "data": {
@@ -50,8 +50,8 @@
                     "id": "0",
                     "type": "start",
                     "warnings": {},
-                    "x": 1020,
-                    "y": 339.9999999999999
+                    "x": 20,
+                    "y": -4.263256414560601e-14
                 },
                 "1": {
                     "data": {
@@ -66,17 +66,17 @@
                     "id": "1",
                     "type": "end",
                     "warnings": {},
-                    "x": 1000,
-                    "y": 860
+                    "x": 20,
+                    "y": 596
                 },
-                "10": {
+                "13": {
                     "data": {
                         "advanced": {
                             "join": []
                         },
                         "functionId": 1,
                         "functionName": "playbook_bmt_phase_1_1",
-                        "id": "10",
+                        "id": "13",
                         "inputs": {},
                         "loop": {
                             "enabled": false,
@@ -88,27 +88,27 @@
                             "pauseValue": 2
                         },
                         "playbookName": "bmt_phase_1",
-                        "playbookRepo": 2,
-                        "playbookRepoName": "local",
+                        "playbookRepo": 3,
+                        "playbookRepoName": "repo_test",
                         "playbookType": "automation",
                         "synchronous": true,
                         "type": "playbook"
                     },
                     "errors": {},
-                    "id": "10",
+                    "id": "13",
                     "type": "playbook",
                     "warnings": {},
-                    "x": 1020,
-                    "y": 479.9999999999999
+                    "x": -1.4210854715202004e-14,
+                    "y": 148.99999999999994
                 },
-                "11": {
+                "14": {
                     "data": {
                         "advanced": {
                             "join": []
                         },
                         "functionId": 1,
                         "functionName": "playbook_bmt_phase_2_1",
-                        "id": "11",
+                        "id": "14",
                         "inputs": {},
                         "loop": {
                             "enabled": false,
@@ -120,27 +120,27 @@
                             "pauseValue": 2
                         },
                         "playbookName": "bmt_phase_2",
-                        "playbookRepo": 2,
-                        "playbookRepoName": "local",
+                        "playbookRepo": 3,
+                        "playbookRepoName": "repo_test",
                         "playbookType": "automation",
                         "synchronous": false,
                         "type": "playbook"
                     },
                     "errors": {},
-                    "id": "11",
+                    "id": "14",
                     "type": "playbook",
                     "warnings": {},
-                    "x": 1020,
-                    "y": 600
+                    "x": -1.4210854715202004e-14,
+                    "y": 297.99999999999994
                 },
-                "12": {
+                "15": {
                     "data": {
                         "advanced": {
                             "join": []
                         },
                         "functionId": 1,
                         "functionName": "playbook_bmt_phase_3_1",
-                        "id": "12",
+                        "id": "15",
                         "inputs": {},
                         "loop": {
                             "enabled": false,
@@ -152,18 +152,18 @@
                             "pauseValue": 2
                         },
                         "playbookName": "bmt_phase_3",
-                        "playbookRepo": 2,
-                        "playbookRepoName": "local",
+                        "playbookRepo": 3,
+                        "playbookRepoName": "repo_test",
                         "playbookType": "automation",
                         "synchronous": false,
                         "type": "playbook"
                     },
                     "errors": {},
-                    "id": "12",
+                    "id": "15",
                     "type": "playbook",
                     "warnings": {},
-                    "x": 939.5,
-                    "y": 714.6363525390625
+                    "x": -1.4210854715202004e-14,
+                    "y": 446.99999999999994
                 }
             },
             "notes": ""
@@ -185,7 +185,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T11:08:29.367599+00:00",
+    "create_time": "2024-10-26T11:15:13.109021+00:00",
     "draft_mode": false,
     "labels": [
         "risk"

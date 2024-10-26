@@ -31,8 +31,8 @@ def playbook_bmt_phase_1_1(action=None, success=None, container=None, results=No
     ## Custom Code End
     ################################################################################
 
-    # call playbook "local/bmt_phase_1", returns the playbook_run_id
-    playbook_run_id = phantom.playbook("local/bmt_phase_1", container=container, name="playbook_bmt_phase_1_1", callback=playbook_bmt_phase_2_1)
+    # call playbook "repo_test/bmt_phase_1", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("repo_test/bmt_phase_1", container=container, name="playbook_bmt_phase_1_1", callback=playbook_bmt_phase_2_1)
 
     return
 
@@ -51,8 +51,8 @@ def playbook_bmt_phase_2_1(action=None, success=None, container=None, results=No
     ## Custom Code End
     ################################################################################
 
-    # call playbook "local/bmt_phase_2", returns the playbook_run_id
-    playbook_run_id = phantom.playbook("local/bmt_phase_2", container=container)
+    # call playbook "repo_test/bmt_phase_2", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("repo_test/bmt_phase_2", container=container)
 
     playbook_bmt_phase_3_1(container=container)
 
@@ -73,8 +73,8 @@ def playbook_bmt_phase_3_1(action=None, success=None, container=None, results=No
     ## Custom Code End
     ################################################################################
 
-    # call playbook "local/bmt_phase_3", returns the playbook_run_id
-    playbook_run_id = phantom.playbook("local/bmt_phase_3", container=container)
+    # call playbook "repo_test/bmt_phase_3", returns the playbook_run_id
+    playbook_run_id = phantom.playbook("repo_test/bmt_phase_3", container=container)
 
     return
 
