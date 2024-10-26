@@ -26,7 +26,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     parameters = []
 
     parameters.append({
-        "query": "earliest=-100m `notable` | search eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *|rename IP as destinationAddress ",
+        "query": "earliest=-5m `notable` | search rule_name=SIEM_RULE_01* AND eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *",
         "command": "search",
         "search_mode": "smart",
     })
@@ -41,7 +41,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     ## Custom Code End
     ################################################################################
 
-    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["splunk_notable"], callback=filter_2)
+    phantom.act("run query", parameters=parameters, name="run_query_1", assets=["splunk_usecase_01"], callback=filter_2)
 
     return
 
@@ -157,7 +157,7 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.sourceAddress","artifact:*.id"])
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress","artifact:*.id"])
 
     parameters = []
 
@@ -202,7 +202,7 @@ def whois_ip_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.src","artifact:*.id"])
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress","artifact:*.id"])
 
     parameters = []
 
@@ -279,7 +279,7 @@ def add_note_6(action=None, success=None, container=None, results=None, handle=N
 def add_to_list_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("add_to_list_7() called")
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.sourceAddress"])
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress"])
 
     container_artifact_cef_item_0 = [item[0] for item in container_artifact_data]
 

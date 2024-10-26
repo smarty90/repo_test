@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "3cd92aecd78581cb73897476ac85439b4963be67",
+            "hash": "ab47075ed93a9b8750d90eed7dc2d6bcf2840874",
             "nodes": {
                 "0": {
                     "data": {
@@ -131,7 +131,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 360,
-                    "y": -4.263256414560601e-14
+                    "y": 0
                 },
                 "1": {
                     "data": {
@@ -218,7 +218,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 340,
-                    "y": 148.99999999999994
+                    "y": 149
                 },
                 "11": {
                     "data": {
@@ -246,7 +246,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "ip": "artifact:*.cef.sourceAddress"
+                            "ip": "artifact:*.cef.destinationAddress"
                         },
                         "requiredParameters": [
                             {
@@ -290,7 +290,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "ip": "artifact:*.cef.src"
+                            "ip": "artifact:*.cef.destinationAddress"
                         },
                         "requiredParameters": [
                             {
@@ -418,7 +418,7 @@
                     "id": "14",
                     "type": "utility",
                     "warnings": {},
-                    "x": -1.4210854715202004e-14,
+                    "x": 0,
                     "y": 1209
                 },
                 "15": {
@@ -585,7 +585,7 @@
                         "values": {
                             "add_list": {
                                 "list_name": "block_list",
-                                "values": "artifact:*.cef.sourceAddress"
+                                "values": "artifact:*.cef.destinationAddress"
                             }
                         }
                     },
@@ -709,7 +709,7 @@
                         },
                         "connector": "Splunk",
                         "connectorConfigs": [
-                            "splunk_notable"
+                            "splunk_usecase_01"
                         ],
                         "connectorId": "91883aa8-9c81-470b-97a1-5d8f7995f560",
                         "connectorVersion": "v1",
@@ -727,7 +727,7 @@
                         },
                         "parameters": {
                             "command": "search",
-                            "query": "earliest=-100m `notable` | search eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *|rename IP as destinationAddress ",
+                            "query": "earliest=-5m `notable` | search rule_name=SIEM_RULE_01* AND eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *",
                             "search_mode": "smart"
                         },
                         "requiredParameters": [
@@ -754,7 +754,7 @@
                     "type": "action",
                     "warnings": {},
                     "x": 340,
-                    "y": 297.99999999999994
+                    "y": 298
                 },
                 "6": {
                     "data": {
@@ -1006,11 +1006,12 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T11:40:42.159512+00:00",
+    "create_time": "2024-10-26T11:52:22.251757+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
-        "usecase_01_push"
+        "usecase_01_push",
+        "usecase_01"
     ],
     "tags": []
 }
