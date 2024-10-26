@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "924fdc57735f9313d086d021f7504a472c7161c8",
+            "hash": "8a99f96052cb0b0561a3634f10350e7a504c929f",
             "nodes": {
                 "0": {
                     "data": {
@@ -727,7 +727,7 @@
                         },
                         "parameters": {
                             "command": "search",
-                            "query": "earliest=-100m `notable` | search eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *|rename ip as destinationAddress ",
+                            "query": "earliest=-100m `notable` | search eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *|rename IP as destinationAddress ",
                             "search_mode": "smart"
                         },
                         "requiredParameters": [
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T11:37:27.363459+00:00",
+    "create_time": "2024-10-26T11:37:53.482810+00:00",
     "draft_mode": false,
     "labels": [
         "risk",

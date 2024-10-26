@@ -26,7 +26,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     parameters = []
 
     parameters.append({
-        "query": "earliest=-100m `notable` | search eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *|rename ip as destinationAddress ",
+        "query": "earliest=-100m `notable` | search eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *|rename IP as destinationAddress ",
         "command": "search",
         "search_mode": "smart",
     })
