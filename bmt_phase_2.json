@@ -71,7 +71,7 @@
                         },
                         "connector": "SMTP",
                         "connectorConfigs": [
-                            "smtp_naver"
+                            "smtp"
                         ],
                         "connectorId": "45bb6f37-4478-499b-b4a3-51ecfa62b78c",
                         "connectorVersion": "v1",
@@ -207,7 +207,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T11:41:09.899893+00:00",
+    "create_time": "2024-10-26T11:45:52.775101+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
