@@ -353,7 +353,7 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
     matched_artifacts_1, matched_results_1 = phantom.condition(
         container=container,
         conditions=[
-            ["run_query_1:action_result.data.*.content.dest_ip", "==", "custom_list:block_list"]
+            ["run_query_1:action_result.data.*.content.dest_ip", "is empty"]
         ],
         name="filter_2:condition_1",
         delimiter=None)
@@ -366,7 +366,7 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
     matched_artifacts_2, matched_results_2 = phantom.condition(
         container=container,
         conditions=[
-            ["run_query_1:action_result.data.*.content.IP_Address", "!=", "custom_list:block_list"]
+            ["run_query_1:action_result.data.*.content.IP_Address", "is not empty"]
         ],
         name="filter_2:condition_2",
         delimiter=None)
