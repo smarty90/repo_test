@@ -157,16 +157,16 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress","artifact:*.id"])
+    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.content.IP_Address","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
 
     parameters = []
 
     # build parameters list for 'ip_reputation_1' call
-    for container_artifact_item in container_artifact_data:
-        if container_artifact_item[0] is not None:
+    for run_query_1_result_item in run_query_1_result_data:
+        if run_query_1_result_item[0] is not None:
             parameters.append({
-                "ip": container_artifact_item[0],
-                "context": {'artifact_id': container_artifact_item[1]},
+                "ip": run_query_1_result_item[0],
+                "context": {'artifact_id': run_query_1_result_item[1]},
             })
 
     ################################################################################
@@ -202,16 +202,16 @@ def whois_ip_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress","artifact:*.id"])
+    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.content.IP_Address","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
 
     parameters = []
 
     # build parameters list for 'whois_ip_1' call
-    for container_artifact_item in container_artifact_data:
-        if container_artifact_item[0] is not None:
+    for run_query_1_result_item in run_query_1_result_data:
+        if run_query_1_result_item[0] is not None:
             parameters.append({
-                "ip": container_artifact_item[0],
-                "context": {'artifact_id': container_artifact_item[1]},
+                "ip": run_query_1_result_item[0],
+                "context": {'artifact_id': run_query_1_result_item[1]},
             })
 
     ################################################################################
@@ -279,9 +279,9 @@ def add_note_6(action=None, success=None, container=None, results=None, handle=N
 def add_to_list_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("add_to_list_7() called")
 
-    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress"])
+    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.content.IP_Address"], action_results=results)
 
-    container_artifact_cef_item_0 = [item[0] for item in container_artifact_data]
+    run_query_1_result_item_0 = [item[0] for item in run_query_1_result_data]
 
     ################################################################################
     ## Custom Code Start
@@ -293,7 +293,7 @@ def add_to_list_7(action=None, success=None, container=None, results=None, handl
     ## Custom Code End
     ################################################################################
 
-    phantom.add_list(list_name="block_list", values=container_artifact_cef_item_0)
+    phantom.add_list(list_name="block_list", values=run_query_1_result_item_0)
 
     return
 

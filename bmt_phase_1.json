@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "86cde03658967e8be0d986b104e397f7228c0ee4",
+            "hash": "5fcb43a190887bb24b91a3e39a5c7564e8707464",
             "nodes": {
                 "0": {
                     "data": {
@@ -246,7 +246,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "ip": "artifact:*.cef.destinationAddress"
+                            "ip": "run_query_1:action_result.data.*.content.IP_Address"
                         },
                         "requiredParameters": [
                             {
@@ -290,7 +290,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "ip": "artifact:*.cef.destinationAddress"
+                            "ip": "run_query_1:action_result.data.*.content.IP_Address"
                         },
                         "requiredParameters": [
                             {
@@ -585,7 +585,7 @@
                         "values": {
                             "add_list": {
                                 "list_name": "block_list",
-                                "values": "artifact:*.cef.destinationAddress"
+                                "values": "run_query_1:action_result.data.*.content.IP_Address"
                             }
                         }
                     },
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T12:04:43.762015+00:00",
+    "create_time": "2024-10-26T12:05:17.944459+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
