@@ -26,7 +26,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     parameters = []
 
     parameters.append({
-        "query": "earliest=-1d `notable` | search rule_name=SIEM_RULE_01* AND  IP_Address=*",
+        "query": "earliest=-1d `notable` | search rule_name=SIEM_RULE_01* ",
         "command": "search",
         "search_mode": "smart",
     })
@@ -157,7 +157,7 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.content.IP_Address","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
+    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.content.dest_ip","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
 
     parameters = []
 
@@ -202,7 +202,7 @@ def whois_ip_1(action=None, success=None, container=None, results=None, handle=N
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.content.IP_Address","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
+    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.content.dest_ip","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
 
     parameters = []
 
@@ -353,7 +353,7 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
     matched_artifacts_1, matched_results_1 = phantom.condition(
         container=container,
         conditions=[
-            ["run_query_1:action_result.data.*.content.IP_Address", "==", "custom_list:block_list"]
+            ["run_query_1:action_result.data.*.content.dest_ip", "==", "custom_list:block_list"]
         ],
         name="filter_2:condition_1",
         delimiter=None)

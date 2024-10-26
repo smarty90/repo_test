@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "b4f831b42ebaadb6c2f28cd45bce20028b3ce275",
+            "hash": "46703b69a2893ff863751436c627a8b4aa810ddb",
             "nodes": {
                 "0": {
                     "data": {
@@ -131,7 +131,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 360,
-                    "y": 0
+                    "y": -4.263256414560601e-14
                 },
                 "1": {
                     "data": {
@@ -218,7 +218,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 340,
-                    "y": 149
+                    "y": 148.99999999999994
                 },
                 "11": {
                     "data": {
@@ -246,7 +246,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "ip": "run_query_1:action_result.data.*.content.IP_Address"
+                            "ip": "run_query_1:action_result.data.*.content.dest_ip"
                         },
                         "requiredParameters": [
                             {
@@ -290,7 +290,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "ip": "run_query_1:action_result.data.*.content.IP_Address"
+                            "ip": "run_query_1:action_result.data.*.content.dest_ip"
                         },
                         "requiredParameters": [
                             {
@@ -418,7 +418,7 @@
                     "id": "14",
                     "type": "utility",
                     "warnings": {},
-                    "x": 0,
+                    "x": -1.4210854715202004e-14,
                     "y": 1209
                 },
                 "15": {
@@ -668,7 +668,7 @@
                                     {
                                         "conditionIndex": 0,
                                         "op": "==",
-                                        "param": "run_query_1:action_result.data.*.content.IP_Address",
+                                        "param": "run_query_1:action_result.data.*.content.dest_ip",
                                         "value": "custom_list:block_list"
                                     }
                                 ],
@@ -727,7 +727,7 @@
                         },
                         "parameters": {
                             "command": "search",
-                            "query": "earliest=-1d `notable` | search rule_name=SIEM_RULE_01* AND  IP_Address=*",
+                            "query": "earliest=-1d `notable` | search rule_name=SIEM_RULE_01* ",
                             "search_mode": "smart"
                         },
                         "requiredParameters": [
@@ -754,7 +754,7 @@
                     "type": "action",
                     "warnings": {},
                     "x": 340,
-                    "y": 298
+                    "y": 297.99999999999994
                 },
                 "6": {
                     "data": {
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T12:07:36.905946+00:00",
+    "create_time": "2024-10-26T12:11:41.411901+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
