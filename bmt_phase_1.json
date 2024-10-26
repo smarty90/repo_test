@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "05a4da36784a166b255f019a0eaffe35b94f0768",
+            "hash": "5a880630849fdfd6f4cd084121f7858a4d9041df",
             "nodes": {
                 "0": {
                     "data": {
@@ -668,8 +668,8 @@
                                     {
                                         "conditionIndex": 0,
                                         "op": "==",
-                                        "param": "custom_list:block_list",
-                                        "value": "artifact:*.cef.destinationAddress"
+                                        "param": "artifact:*.cef.destinationAddress",
+                                        "value": "custom_list:block_list"
                                     }
                                 ],
                                 "conditionIndex": 0,
@@ -680,8 +680,8 @@
                                     {
                                         "conditionIndex": 1,
                                         "op": "!=",
-                                        "param": "custom_list:block_list",
-                                        "value": "artifact:*.cef.destinationAddress"
+                                        "param": "artifact:*.cef.destinationAddress",
+                                        "value": "custom_list:block_list"
                                     }
                                 ],
                                 "conditionIndex": 1,
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T12:00:23.168960+00:00",
+    "create_time": "2024-10-26T12:02:14.639386+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
