@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "763ff0fb7ba8263a5c87692b2c8c004ca0587313",
+            "hash": "5683e74cb13db9fba1dbafdbb2feae6477aa30bf",
             "nodes": {
                 "0": {
                     "data": {
@@ -667,8 +667,9 @@
                                 "comparisons": [
                                     {
                                         "conditionIndex": 0,
-                                        "op": "is empty",
-                                        "param": "run_query_1:action_result.data.*.content.dest_ip"
+                                        "op": "not in",
+                                        "param": "run_query_1:action_result.data.*.content.dest_ip",
+                                        "value": "custom_list:block_list"
                                     }
                                 ],
                                 "conditionIndex": 0,
@@ -678,8 +679,9 @@
                                 "comparisons": [
                                     {
                                         "conditionIndex": 1,
-                                        "op": "is not empty",
-                                        "param": "run_query_1:action_result.data.*.content.IP_Address"
+                                        "op": "in",
+                                        "param": "run_query_1:action_result.data.*.content.IP_Address",
+                                        "value": "custom_list:block_list"
                                     }
                                 ],
                                 "conditionIndex": 1,
@@ -1004,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T12:13:00.120484+00:00",
+    "create_time": "2024-10-26T12:13:57.480900+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
