@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "8a99f96052cb0b0561a3634f10350e7a504c929f",
+            "hash": "3cd92aecd78581cb73897476ac85439b4963be67",
             "nodes": {
                 "0": {
                     "data": {
@@ -131,7 +131,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 360,
-                    "y": 0
+                    "y": -4.263256414560601e-14
                 },
                 "1": {
                     "data": {
@@ -218,7 +218,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 340,
-                    "y": 149
+                    "y": 148.99999999999994
                 },
                 "11": {
                     "data": {
@@ -418,7 +418,7 @@
                     "id": "14",
                     "type": "utility",
                     "warnings": {},
-                    "x": 0,
+                    "x": -1.4210854715202004e-14,
                     "y": 1209
                 },
                 "15": {
@@ -605,7 +605,7 @@
                         },
                         "connector": "SMTP",
                         "connectorConfigs": [
-                            "smtp"
+                            "smtp_naver"
                         ],
                         "connectorId": "45bb6f37-4478-499b-b4a3-51ecfa62b78c",
                         "connectorVersion": "v1",
@@ -754,7 +754,7 @@
                     "type": "action",
                     "warnings": {},
                     "x": 340,
-                    "y": 298
+                    "y": 297.99999999999994
                 },
                 "6": {
                     "data": {
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T11:37:53.482810+00:00",
+    "create_time": "2024-10-26T11:40:42.159512+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
