@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "e978cee31a27ff530ef2b88dc92f3e604072fada",
+            "hash": "ffa5e0b8534fdb05fa6a54d8494716ae803a635e",
             "nodes": {
                 "0": {
                     "data": {
@@ -131,7 +131,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 360,
-                    "y": -4.263256414560601e-14
+                    "y": 0
                 },
                 "1": {
                     "data": {
@@ -218,7 +218,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 340,
-                    "y": 148.99999999999994
+                    "y": 149
                 },
                 "11": {
                     "data": {
@@ -418,7 +418,7 @@
                     "id": "14",
                     "type": "utility",
                     "warnings": {},
-                    "x": -1.4210854715202004e-14,
+                    "x": 0,
                     "y": 1209
                 },
                 "15": {
@@ -727,7 +727,7 @@
                         },
                         "parameters": {
                             "command": "search",
-                            "query": "index=notable earliest=-5m@m latest=now",
+                            "query": "earliest=-100m `notable` | search eventtype!=risk_notables | table _time, _raw, host, index, info_max_time, info_min_time, all_risk_objects, drilldown_earliest, drilldown_latest, drilldown_search, rule_description, rule_id, rule_name, rule_title, savesearch_description, search_name, security_domain, severity, source, source_count, splunk_server, status, status_description, urgency,notable_type *",
                             "search_mode": "smart"
                         },
                         "requiredParameters": [
@@ -754,7 +754,7 @@
                     "type": "action",
                     "warnings": {},
                     "x": 340,
-                    "y": 297.99999999999994
+                    "y": 298
                 },
                 "6": {
                     "data": {
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T11:24:48.481219+00:00",
+    "create_time": "2024-10-26T11:32:12.504084+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
