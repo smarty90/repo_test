@@ -157,16 +157,16 @@ def ip_reputation_1(action=None, success=None, container=None, results=None, han
 
     # phantom.debug('Action: {0} {1}'.format(action['name'], ('SUCCEEDED' if success else 'FAILED')))
 
-    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.content.dest_ip","run_query_1:action_result.parameter.context.artifact_id"], action_results=results)
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress","artifact:*.id"])
 
     parameters = []
 
     # build parameters list for 'ip_reputation_1' call
-    for run_query_1_result_item in run_query_1_result_data:
-        if run_query_1_result_item[0] is not None:
+    for container_artifact_item in container_artifact_data:
+        if container_artifact_item[0] is not None:
             parameters.append({
-                "ip": run_query_1_result_item[0],
-                "context": {'artifact_id': run_query_1_result_item[1]},
+                "ip": container_artifact_item[0],
+                "context": {'artifact_id': container_artifact_item[1]},
             })
 
     ################################################################################

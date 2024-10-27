@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "cd37ace900110dd97f977a13649ec6e3d2878e89",
+            "hash": "c6ab10be59cadcf63ec7e7252ff4f137718c7fb2",
             "nodes": {
                 "0": {
                     "data": {
@@ -246,7 +246,7 @@
                             "pauseValue": 2
                         },
                         "parameters": {
-                            "ip": "run_query_1:action_result.data.*.content.dest_ip"
+                            "ip": "artifact:*.cef.destinationAddress"
                         },
                         "requiredParameters": [
                             {
@@ -624,6 +624,7 @@
                         "nestedNodeParent": "8",
                         "parameters": {
                             "body": {
+                                "functionId": 1,
                                 "parameters": [
                                     "ticket_check:action_result.status",
                                     "ticket_check:action_result.parameter.ttl",
@@ -1006,7 +1007,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-27T09:57:06.382716+00:00",
+    "create_time": "2024-10-27T09:59:55.242607+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
