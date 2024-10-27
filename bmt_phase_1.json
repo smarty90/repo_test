@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "8895f4d3abcc9467f84868e4c1ce327513b1d300",
+            "hash": "7c5253d40220ee478c7a725931a5a0c51ac7214c",
             "nodes": {
                 "0": {
                     "data": {
@@ -728,7 +728,7 @@
                         },
                         "parameters": {
                             "command": "search",
-                            "query": "earliest=-1d `notable` | search rule_name=SIEM_RULE_01* ",
+                            "query": "earliest=-1d `notable` | search rule_name=SIEM_RULE_01*|head 1 ",
                             "search_mode": "smart"
                         },
                         "requiredParameters": [
@@ -1007,7 +1007,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-27T09:50:08.676271+00:00",
+    "create_time": "2024-10-27T09:50:32.620161+00:00",
     "draft_mode": false,
     "labels": [
         "risk",

@@ -26,7 +26,7 @@ def run_query_1(action=None, success=None, container=None, results=None, handle=
     parameters = []
 
     parameters.append({
-        "query": "earliest=-1d `notable` | search rule_name=SIEM_RULE_01* ",
+        "query": "earliest=-1d `notable` | search rule_name=SIEM_RULE_01*|head 1 ",
         "command": "search",
         "search_mode": "smart",
     })
