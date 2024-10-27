@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "09fb9dbeebff45a6a1b095ae1c1056b869da9f12",
+            "hash": "cd37ace900110dd97f977a13649ec6e3d2878e89",
             "nodes": {
                 "0": {
                     "data": {
@@ -131,7 +131,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 360,
-                    "y": -8.526512829121202e-14
+                    "y": -1.2789769243681803e-13
                 },
                 "1": {
                     "data": {
@@ -218,7 +218,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 340,
-                    "y": 148.9999999999999
+                    "y": 148.99999999999983
                 },
                 "11": {
                     "data": {
@@ -669,7 +669,7 @@
                                         "conditionIndex": 0,
                                         "op": "not in",
                                         "param": "artifact:*.cef.destinationAddress",
-                                        "value": "custom_list:block_list"
+                                        "value": "custom_list:custom_list"
                                     }
                                 ],
                                 "conditionIndex": 0,
@@ -681,7 +681,7 @@
                                         "conditionIndex": 1,
                                         "op": "in",
                                         "param": "artifact:*.cef.destinationAddress",
-                                        "value": "custom_list:block_list"
+                                        "value": "custom_list:custom_list"
                                     }
                                 ],
                                 "conditionIndex": 1,
@@ -754,7 +754,7 @@
                     "type": "action",
                     "warnings": {},
                     "x": 340,
-                    "y": 297.9999999999999
+                    "y": 297.99999999999983
                 },
                 "6": {
                     "data": {
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-27T09:52:02.724999+00:00",
+    "create_time": "2024-10-27T09:57:06.382716+00:00",
     "draft_mode": false,
     "labels": [
         "risk",

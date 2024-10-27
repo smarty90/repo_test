@@ -356,7 +356,7 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
     matched_artifacts_1, matched_results_1 = phantom.condition(
         container=container,
         conditions=[
-            ["artifact:*.cef.destinationAddress", "not in", "custom_list:block_list"]
+            ["artifact:*.cef.destinationAddress", "not in", "custom_list:custom_list"]
         ],
         name="filter_2:condition_1",
         delimiter=None)
@@ -369,7 +369,7 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
     matched_artifacts_2, matched_results_2 = phantom.condition(
         container=container,
         conditions=[
-            ["artifact:*.cef.destinationAddress", "in", "custom_list:block_list"]
+            ["artifact:*.cef.destinationAddress", "in", "custom_list:custom_list"]
         ],
         name="filter_2:condition_2",
         delimiter=None)
