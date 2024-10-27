@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "7c5253d40220ee478c7a725931a5a0c51ac7214c",
+            "hash": "09fb9dbeebff45a6a1b095ae1c1056b869da9f12",
             "nodes": {
                 "0": {
                     "data": {
@@ -585,7 +585,7 @@
                         "values": {
                             "add_list": {
                                 "list_name": "block_list",
-                                "values": ""
+                                "values": "artifact:*.cef.destinationAddress"
                             }
                         }
                     },
@@ -630,10 +630,9 @@
                                     "ticket_check:action_result.summary.answered_at",
                                     "ticket_check:action_result.summary.responder_email",
                                     "ticket_check:action_result.parameter.secure_link",
-                                    "artifact:*.cef.destinationAddress",
-                                    "run_query_1:artifact:*.cef.destinationAddress"
+                                    "artifact:*.cef.destinationAddress"
                                 ],
-                                "template": "1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}\n\ub0b4\uc6a9 : {5}\n\ub0b4\uc6a92:{6}\n"
+                                "template": "1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}\n\ub0b4\uc6a9 : {5}\n\n"
                             },
                             "from": "smarty90@naver.com",
                             "subject": "\ud655\uc778\uc720\ubb34",
@@ -1007,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-27T09:50:32.620161+00:00",
+    "create_time": "2024-10-27T09:52:02.724999+00:00",
     "draft_mode": false,
     "labels": [
         "risk",

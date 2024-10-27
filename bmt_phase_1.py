@@ -279,6 +279,10 @@ def add_note_6(action=None, success=None, container=None, results=None, handle=N
 def add_to_list_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("add_to_list_7() called")
 
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress"])
+
+    container_artifact_cef_item_0 = [item[0] for item in container_artifact_data]
+
     ################################################################################
     ## Custom Code Start
     ################################################################################
@@ -289,7 +293,7 @@ def add_to_list_7(action=None, success=None, container=None, results=None, handl
     ## Custom Code End
     ################################################################################
 
-    phantom.add_list(list_name="block_list", values="")
+    phantom.add_list(list_name="block_list", values=container_artifact_cef_item_0)
 
     return
 
@@ -302,35 +306,32 @@ def send_email_1(action=None, success=None, container=None, results=None, handle
 
     body_formatted_string = phantom.format(
         container=container,
-        template="""1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}\n내용 : {5}\n내용2:{6}\n""",
+        template="""1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}\n내용 : {5}\n\n""",
         parameters=[
             "ticket_check:action_result.status",
             "ticket_check:action_result.parameter.ttl",
             "ticket_check:action_result.summary.answered_at",
             "ticket_check:action_result.summary.responder_email",
             "ticket_check:action_result.parameter.secure_link",
-            "artifact:*.cef.destinationAddress",
-            "run_query_1:artifact:*.cef.destinationAddress"
+            "artifact:*.cef.destinationAddress"
         ])
 
     ticket_check_result_data = phantom.collect2(container=container, datapath=["ticket_check:action_result.status","ticket_check:action_result.parameter.ttl","ticket_check:action_result.summary.answered_at","ticket_check:action_result.summary.responder_email","ticket_check:action_result.parameter.secure_link","ticket_check:action_result.parameter.context.artifact_id"], action_results=results)
     container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress","artifact:*.id"])
-    inputs_data_0 = phantom.collect2(container=container, datapath=["run_query_1:artifact:*.cef.destinationAddress","run_query_1:artifact:*.id"])
 
     parameters = []
 
     # build parameters list for 'send_email_1' call
     for ticket_check_result_item in ticket_check_result_data:
         for container_artifact_item in container_artifact_data:
-            for inputs_item_0 in inputs_data_0:
-                if body_formatted_string is not None:
-                    parameters.append({
-                        "to": "michael.kim@wiredcorp.co.kr",
-                        "body": body_formatted_string,
-                        "from": "smarty90@naver.com",
-                        "subject": "확인유무",
-                        "context": {'artifact_id': inputs_item_0[1]},
-                    })
+            if body_formatted_string is not None:
+                parameters.append({
+                    "to": "michael.kim@wiredcorp.co.kr",
+                    "body": body_formatted_string,
+                    "from": "smarty90@naver.com",
+                    "subject": "확인유무",
+                    "context": {'artifact_id': container_artifact_item[1]},
+                })
 
     ################################################################################
     ## Custom Code Start
