@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "635403a673015e350532649d928917306b0b7361",
+            "hash": "8895f4d3abcc9467f84868e4c1ce327513b1d300",
             "nodes": {
                 "0": {
                     "data": {
@@ -585,7 +585,7 @@
                         "values": {
                             "add_list": {
                                 "list_name": "block_list",
-                                "values": "run_query_1:action_result.data.*.content.IP_Address"
+                                "values": ""
                             }
                         }
                     },
@@ -630,9 +630,10 @@
                                     "ticket_check:action_result.summary.answered_at",
                                     "ticket_check:action_result.summary.responder_email",
                                     "ticket_check:action_result.parameter.secure_link",
+                                    "artifact:*.cef.destinationAddress",
                                     "run_query_1:artifact:*.cef.destinationAddress"
                                 ],
-                                "template": "1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}\n\ub0b4\uc6a9 : {5}"
+                                "template": "1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}\n\ub0b4\uc6a9 : {5}\n\ub0b4\uc6a92:{6}\n"
                             },
                             "from": "smarty90@naver.com",
                             "subject": "\ud655\uc778\uc720\ubb34",
@@ -668,7 +669,7 @@
                                     {
                                         "conditionIndex": 0,
                                         "op": "not in",
-                                        "param": "run_query_1:action_result.data.*.content.dest_ip",
+                                        "param": "artifact:*.cef.destinationAddress",
                                         "value": "custom_list:block_list"
                                     }
                                 ],
@@ -680,7 +681,7 @@
                                     {
                                         "conditionIndex": 1,
                                         "op": "in",
-                                        "param": "run_query_1:action_result.data.*.content.IP_Address",
+                                        "param": "artifact:*.cef.destinationAddress",
                                         "value": "custom_list:block_list"
                                     }
                                 ],
@@ -698,7 +699,7 @@
                     "type": "filter",
                     "warnings": {},
                     "x": 400,
-                    "y": 447
+                    "y": 440
                 },
                 "2": {
                     "data": {
@@ -1006,7 +1007,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-27T09:46:15.853284+00:00",
+    "create_time": "2024-10-27T09:50:08.676271+00:00",
     "draft_mode": false,
     "labels": [
         "risk",

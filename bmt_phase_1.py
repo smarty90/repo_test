@@ -279,10 +279,6 @@ def add_note_6(action=None, success=None, container=None, results=None, handle=N
 def add_to_list_7(action=None, success=None, container=None, results=None, handle=None, filtered_artifacts=None, filtered_results=None, custom_function=None, loop_state_json=None, **kwargs):
     phantom.debug("add_to_list_7() called")
 
-    run_query_1_result_data = phantom.collect2(container=container, datapath=["run_query_1:action_result.data.*.content.IP_Address"], action_results=results)
-
-    run_query_1_result_item_0 = [item[0] for item in run_query_1_result_data]
-
     ################################################################################
     ## Custom Code Start
     ################################################################################
@@ -293,7 +289,7 @@ def add_to_list_7(action=None, success=None, container=None, results=None, handl
     ## Custom Code End
     ################################################################################
 
-    phantom.add_list(list_name="block_list", values=run_query_1_result_item_0)
+    phantom.add_list(list_name="block_list", values="")
 
     return
 
@@ -306,32 +302,35 @@ def send_email_1(action=None, success=None, container=None, results=None, handle
 
     body_formatted_string = phantom.format(
         container=container,
-        template="""1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}\n내용 : {5}""",
+        template="""1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}\n내용 : {5}\n내용2:{6}\n""",
         parameters=[
             "ticket_check:action_result.status",
             "ticket_check:action_result.parameter.ttl",
             "ticket_check:action_result.summary.answered_at",
             "ticket_check:action_result.summary.responder_email",
             "ticket_check:action_result.parameter.secure_link",
+            "artifact:*.cef.destinationAddress",
             "run_query_1:artifact:*.cef.destinationAddress"
         ])
 
     ticket_check_result_data = phantom.collect2(container=container, datapath=["ticket_check:action_result.status","ticket_check:action_result.parameter.ttl","ticket_check:action_result.summary.answered_at","ticket_check:action_result.summary.responder_email","ticket_check:action_result.parameter.secure_link","ticket_check:action_result.parameter.context.artifact_id"], action_results=results)
+    container_artifact_data = phantom.collect2(container=container, datapath=["artifact:*.cef.destinationAddress","artifact:*.id"])
     inputs_data_0 = phantom.collect2(container=container, datapath=["run_query_1:artifact:*.cef.destinationAddress","run_query_1:artifact:*.id"])
 
     parameters = []
 
     # build parameters list for 'send_email_1' call
     for ticket_check_result_item in ticket_check_result_data:
-        for inputs_item_0 in inputs_data_0:
-            if body_formatted_string is not None:
-                parameters.append({
-                    "to": "michael.kim@wiredcorp.co.kr",
-                    "body": body_formatted_string,
-                    "from": "smarty90@naver.com",
-                    "subject": "확인유무",
-                    "context": {'artifact_id': inputs_item_0[1]},
-                })
+        for container_artifact_item in container_artifact_data:
+            for inputs_item_0 in inputs_data_0:
+                if body_formatted_string is not None:
+                    parameters.append({
+                        "to": "michael.kim@wiredcorp.co.kr",
+                        "body": body_formatted_string,
+                        "from": "smarty90@naver.com",
+                        "subject": "확인유무",
+                        "context": {'artifact_id': inputs_item_0[1]},
+                    })
 
     ################################################################################
     ## Custom Code Start
@@ -356,7 +355,7 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
     matched_artifacts_1, matched_results_1 = phantom.condition(
         container=container,
         conditions=[
-            ["run_query_1:action_result.data.*.content.dest_ip", "not in", "custom_list:block_list"]
+            ["artifact:*.cef.destinationAddress", "not in", "custom_list:block_list"]
         ],
         name="filter_2:condition_1",
         delimiter=None)
@@ -369,7 +368,7 @@ def filter_2(action=None, success=None, container=None, results=None, handle=Non
     matched_artifacts_2, matched_results_2 = phantom.condition(
         container=container,
         conditions=[
-            ["run_query_1:action_result.data.*.content.IP_Address", "in", "custom_list:block_list"]
+            ["artifact:*.cef.destinationAddress", "in", "custom_list:block_list"]
         ],
         name="filter_2:condition_2",
         delimiter=None)
