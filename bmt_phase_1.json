@@ -115,7 +115,7 @@
                     "targetPort": "7_in"
                 }
             ],
-            "hash": "b4f831b42ebaadb6c2f28cd45bce20028b3ce275",
+            "hash": "635403a673015e350532649d928917306b0b7361",
             "nodes": {
                 "0": {
                     "data": {
@@ -131,7 +131,7 @@
                     "type": "start",
                     "warnings": {},
                     "x": 360,
-                    "y": -4.263256414560601e-14
+                    "y": -8.526512829121202e-14
                 },
                 "1": {
                     "data": {
@@ -218,7 +218,7 @@
                     "type": "utility",
                     "warnings": {},
                     "x": 340,
-                    "y": 148.99999999999994
+                    "y": 148.9999999999999
                 },
                 "11": {
                     "data": {
@@ -624,15 +624,15 @@
                         "nestedNodeParent": "8",
                         "parameters": {
                             "body": {
-                                "functionId": 1,
                                 "parameters": [
                                     "ticket_check:action_result.status",
                                     "ticket_check:action_result.parameter.ttl",
                                     "ticket_check:action_result.summary.answered_at",
                                     "ticket_check:action_result.summary.responder_email",
-                                    "ticket_check:action_result.parameter.secure_link"
+                                    "ticket_check:action_result.parameter.secure_link",
+                                    "run_query_1:artifact:*.cef.destinationAddress"
                                 ],
-                                "template": "1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}"
+                                "template": "1:{0}\n2:{1}\n3:{2}\n4:{3}\n5:{4}\n\ub0b4\uc6a9 : {5}"
                             },
                             "from": "smarty90@naver.com",
                             "subject": "\ud655\uc778\uc720\ubb34",
@@ -754,7 +754,7 @@
                     "type": "action",
                     "warnings": {},
                     "x": 340,
-                    "y": 297.99999999999994
+                    "y": 297.9999999999999
                 },
                 "6": {
                     "data": {
@@ -1006,7 +1006,7 @@
         "schema": "5.0.15",
         "version": "6.3.0.719"
     },
-    "create_time": "2024-10-26T12:13:57.480900+00:00",
+    "create_time": "2024-10-27T09:46:15.853284+00:00",
     "draft_mode": false,
     "labels": [
         "risk",
